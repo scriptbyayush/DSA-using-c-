@@ -1,0 +1,22 @@
+
+inside pass by value : 
+110
+hello world
+
+inside pass by reference : 
+150
+hello world
+100
+
+after pass by value
+10
+hello
+
+after pass by reference
+150
+hello world
+100
+32767
+-1027063136
+25549
+1372823936
