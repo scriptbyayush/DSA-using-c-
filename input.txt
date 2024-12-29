@@ -1,1 +1,29 @@
-12111
+ void insertBefore(int targetValue, int newValue) {
+        if (head == nullptr) {
+            cout << "The list is empty." << endl;
+            return;
+        }
+
+        if (head->data == targetValue) {  // If the target node is the head
+            insertAtBeginning(newValue);
+            return;
+        }
+
+        Node* temp = head;
+        Node* prev = nullptr;
+
+        while (temp != nullptr && temp->data != targetValue) {
+            prev = temp;
+            temp = temp->next;
+        }
+
+        if (temp == nullptr) {
+            cout << "Node with value " << targetValue << " not found." << endl;
+            return;
+        }
+
+        Node* newNode = new Node();
+        newNode->data = newValue;
+        newNode->next = temp;
+        prev->next = newNode;  // Link the previous node to the new node
+    }
