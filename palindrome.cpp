@@ -5,7 +5,6 @@ bool cp(int num){
     int rem=0;
     int rev=0;
     int n=num;
-    
     for(num;num!=0;){
 
         rem=num%10;
