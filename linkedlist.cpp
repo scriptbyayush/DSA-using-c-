@@ -114,6 +114,90 @@ class LinkedList
         return;
     }
 
+    void removeFromStart()
+    {
+        if(head==nullptr)
+        {
+
+            cout<<"emptyyy"<<endl;
+            return;
+        }
+
+        Node *temp=head;
+        head=head->next;
+        delete temp;
+
+        return;
+    }
+
+
+    void removeFromEnd()
+    {
+        if(head==nullptr)
+        {
+
+            cout<<"emptyy"<<endl;
+            return;
+        }
+
+        Node *temp=head;
+        Node *prev=nullptr;
+
+        while(temp->next!=nullptr)
+        {
+
+            prev=temp;
+            temp=temp->next;
+        }
+
+        prev->next=nullptr;
+
+        delete temp;
+
+        return;
+    }
+
+    void removeNode(int targetValue)
+    {
+        if(head==nullptr)
+        {
+            cout<<"emptyy"<<endl;
+            return;
+        }
+
+        if(head->data==targetValue)
+        {
+
+            removeFromStart();
+            return;
+        }
+
+        Node *temp=head;
+        Node *prev=nullptr;
+
+        while(temp!=nullptr&&temp->data!=targetValue)
+        {
+
+            prev=temp;
+            temp=temp->next;
+        }
+
+        if(temp==nullptr)
+        {
+
+            cout<<"not found"<<targetValue<<endl;
+            return;
+        }
+
+        prev->next=temp->next;
+
+        delete temp;
+
+        return;
+    }
+
+
+
     void display(){
 
         if(head==nullptr)
@@ -125,10 +209,12 @@ class LinkedList
         Node *temp=head;
         while(temp!=nullptr){
 
-            cout<<temp->data<<endl<<endl;
+            cout<<temp->data<<endl;
 
             temp=temp->next;
         }
+
+        cout<<endl<<endl;
 
         return;
     }
@@ -144,12 +230,30 @@ int main()
     list.insertAtEnd(10);
     list.insertAtEnd(20);
     list.insertAtEnd(30);
+    list.insertAtEnd(40);
+    list.insertAtEnd(50);
+    list.insertAtEnd(60);
+
+
+    // list.display();
 
     list.insertAtBeginning(5);
 
+  //  list.display();
+
     list.insertAfter(15,10);
 
+    //list.display();
+
     list.insertBefore(25,30);
+
+    list.removeFromStart();
+
+    list.removeFromEnd();
+
+    list.removeNode(25);
+    list.removeNode(10);
+
 
     list.display();
 
