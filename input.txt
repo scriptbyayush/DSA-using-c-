@@ -1,0 +1,14 @@
+ void reverse() {
+        Node *prev = nullptr;
+        Node *current = head;
+        Node *next = nullptr;
+
+        while (current != nullptr) {
+            next = current->next; // Save the next node
+            current->next = prev; // Reverse the current node's pointer
+            prev = current;       // Move prev one step forward
+            current = next;       // Move current one step forward
+        }
+
+        head = prev; // Update head to the new front of the list
+    }
