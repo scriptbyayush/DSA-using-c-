@@ -2,10 +2,8 @@
 20
 30
 40
-50
-after reverse:
 
-50
+after reverse:
 40
 30
 20
