@@ -48,12 +48,10 @@ class LinkedList{
 
         while(current!=nullptr)
         {
-
             next=current->next;
             current->next=prev;
             prev=current;
             current=next;
-
         }
 
         head=prev;
@@ -91,7 +89,7 @@ int main()
 
     list.display();
 
-    cout<<"after reverse :"<<endl<<endl;
+    cout<<"after reverse:"<<endl<<endl;
 
     list.reverse();
     list.display();

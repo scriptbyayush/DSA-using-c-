@@ -3,7 +3,7 @@
 30
 40
 50
-after reverse :
+after reverse:
 
 50
 40
